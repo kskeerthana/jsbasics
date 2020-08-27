@@ -1,0 +1,30 @@
+﻿JS BASICS
+
+
+* Javascript - scripting language for front-end development.
+* Js code can be included either inside the html file directly or make a seperate file with .js extension.
+* Console.log() is used to print the output in the console and makes it easier to debug
+* alert(‘some message’) given in the console gives pop up message!
+
+
+Declarations :
+* variable is declared using let  
+* constant value is declared as const and cannot be changed
+* Object :
+let person={
+name:’xyz’,
+age:10
+};
+* Objects can be called using console.log() also to print a particular attribute dot notation or bracket notation is used. 
+* Comparatively dot notation is preferable.
+* Arrays: let colors=[‘red’,’blue’];
+* Function: function hello(name){} 
+
+
+Operators are same as C and python except === : Compares equality of two operands with type.
+Data Types :
+1. String
+2. Number
+3. Boolean
+4. Null
+5. Undefined
