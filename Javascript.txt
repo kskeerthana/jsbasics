@@ -28,3 +28,76 @@ Data Types :
 3. Boolean
 4. Null
 5. Undefined
+
+group related functions and variables into object - encapsulation
+let employee={
+	base:10,000, //variables
+	overtime:10,
+	rate:20,
+	getWage:function(){ //fn.
+		return this.base + (this.overtime * this.rate);
+	}
+};
+employee.getWage();
+
+hides properties and methods of objects-abstraction
+eliminate redudant code - inheritance
+use render element instead of multiple switch cases-polymorphism
+
+//object literal
+const circle ={
+	radius:1, //properties
+	location={
+	   x:1,
+	   y:1
+	},
+	draw:function() { // method
+	   console.log('draw');
+	   }
+	};
+
+circle.draw();		
+
+If an object literal has one or more methods then it's called behaviour and to avoid behaviour we use constructors and factory functions.
+In es6 if the key and the value pair are same then we can remove one of them.
+
+//factory fn.
+function createCircle(radius){
+	return{
+	radius, 
+	draw:function() { 
+	   console.log('draw');
+	   }
+	};
+}	
+ const circle = createCircle(1);
+ 
+//constructor fn.
+function Circle(radius){
+	this.radius =radius;//this is a keyword referencing object executing the code
+	this.draw:function() { 
+	   console.log('draw');
+	   }
+	   }
+const another = new Circle(1); // removing new will bring in global  
+
+//constructor property
+fn. used to create that obj.
+type Circle.constructor in console
+
+//arrow fn. 
+makes the code look neater. 
+const hello = (name) => `hey there ${name}`;
+
+//destructing object
+unpack values from arrays or properties into distinct values.
+const user = {
+	id:42,
+	name:'Joshua'
+	};
+const {id,name}=user;
+
+//spread operator 
+const first={name : 'joshh'};
+const second={job:'teacher'};
+const combined = {...first, age:40, ...second};	
