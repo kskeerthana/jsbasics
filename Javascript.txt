@@ -101,3 +101,23 @@ const {id,name}=user;
 const first={name : 'joshh'};
 const second={job:'teacher'};
 const combined = {...first, age:40, ...second};	
+
+To iterate over the objects we convert them into array data and to do so we have three built-in methods:
+//Object.keys()-takes the keys of an object and turns it into an array
+const user = {
+	basic:1231,
+	pay:10000,
+};
+console.log(Object,keys(user));// ["basic","pay"]
+
+To check if the key exists use include().
+To get the values of the key use map().
+
+//Object.values() - easier way to get the values of the key .
+If there are muliple keys in the object to get the sum of the values use reduce().
+
+//Object.entries() - both keys and values, mapped to a single array
+console.log(Object.entries(user));
+
+//when we need to transform the data into an array of object, and also want to filter based on a condition map and filter can be used.
+Since both of them are reduction operations we can simply use reduce instead.

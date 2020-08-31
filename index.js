@@ -61,3 +61,80 @@ class People{
 }
 const peep=new People('KS');
 console.log(peep);
+
+//nested destruction
+//with nested object 
+const userDetails = {
+    id:12,
+    name:'Bob',
+    education : {
+        degree:'Masters'
+    }
+    
+};
+const {education: {degree} = {}} =userDetails;
+console.log(degree);
+
+//nested object missing 
+const user = {
+    id:12,
+    name:'Bob',
+    
+};
+const {education: {school:{names = 'IISJ'} = {}} = {}} =user;
+console.log(names);
+
+//array destructing
+let thing = ["Table", "Chair", "Fan"];
+let [a, b, c] = thing;
+console.log(a);
+
+//Object.keys()
+const userSalary = {
+	basic:1231,
+	pay:10000,
+};
+console.log(Object.keys(userSalary));
+// to check if the key exists:
+const basicExists = Object.keys(userSalary).includes("basic");
+console.log(basicExists);
+//to get the values of the keys 
+const values = Object.keys(userSalary).map((key) => userSalary[key]);
+console.log(values)
+//instead we can use Object.values()
+const values1 = Object.values(userSalary);
+console.log(values1);
+//multiple values in object
+const monthlyTotal = {
+    food: 400,
+    rent: 1700,
+    insurance: 550,
+    internet: 49,
+    phone: 95,
+  };
+const total = Object.values(monthlyTotal).reduce((acc,expense) => acc+expense,0
+);
+console.log(total);
+
+const users2 = {
+    "1": {
+      name: "John",
+      age: 29,
+    },
+    "2": {
+      name: "Jane",
+      age: 42,
+    },
+    "3": {
+      name: "Fred",
+      age: 17,
+    },
+  };
+
+  const usersOver20 = Object.entries(users2).reduce((acc, [id, user]) => {
+    if (user.age > 20) {
+      acc.push({ ...user, id });
+    }
+    return acc;
+  }, []);
+  console.log(usersOver20);
